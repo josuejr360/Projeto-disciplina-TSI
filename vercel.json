@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "functions": {
+    "api/*.py": {
+      "includeFiles": "db/python/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/((?!db-python$|worker-python$).*)",
+      "destination": "/api/index.js"
+    }
+  ]
+}

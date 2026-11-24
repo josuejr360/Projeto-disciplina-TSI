@@ -1,0 +1,29 @@
+{
+  "name": "academey-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.6" },
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "dev": "node --env-file=.env --watch src/server.js",
+    "test": "node --test",
+    "db:init": "node --env-file=.env scripts/init-db.js",
+    "seed": "node --env-file=.env scripts/seed.js",
+    "py:db:init": "python db/python/cli.py init",
+    "py:db:seed": "python db/python/cli.py seed",
+    "py:db:status": "python db/python/cli.py status",
+    "py:worker": "python db/python/worker.py --watch",
+    "py:worker:once": "python db/python/worker.py --once"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "zod": "^3.24.1"
+  }
+}
